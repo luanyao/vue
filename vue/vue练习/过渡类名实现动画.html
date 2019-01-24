@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue-2.4.0.js"></script>
+    <link rel="stylesheet" href="./css/animate.css">
+    <style>
+        /* .v-enter,
+       .v-leave-to{
+           opacity: 0;
+           transform: translateX(150px);
+       }
+
+       .v-enter-active,
+       .v-leave-active{
+           transition:all 1s ease;
+       }
+
+
+
+       .my-enter,
+       .my-leave-to{
+           opacity: 0;
+           transform: translateY(70px);
+       }
+
+       .my-enter-active,
+       .my-leave-active{
+           transition:all 1s ease;
+       } */
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="toggle" @click="flag=!flag">
+
+        <transition enter-active-class="bounceIn" leave-active-class="bounceOut" :duration="{ enter: 200, leave: 400 }">
+            <h3 v-if="flag" class="animated">这是一个h3</h3>
+        </transition>
+
+
+        <hr>
+
+        <input type="button" value="toggle2" @click="flag2=!flag2">
+
+        <!-- <transition name="my"> -->
+
+
+        <transition enter-active-class="bounceIn" leave-active-class="bounceOut" :duration="{ enter: 200, leave: 400 }">
+
+            <h6 v-if="flag2" class="animated">这是一个h6</h6>
+        </transition>
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                flag: false,
+                flag2: false
+            },
+            methods: {
+
+            },
+        })
+    </script>
+</body>
+
+</html>

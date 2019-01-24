@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="./jquery-3.3.1.js" charset="uft-8"></script>
+    <script>
+      /*
+		<!-- //假如一个发红包功能,只能发123,520,666,888等价格
+		var money=520;//表示法520,
+		//将来根据用户自己选
+		switch(money){
+			cass 1314:
+				alert("一生一世想干啥");
+				break;
+			cass 888:
+				alert("三八24,我会算");
+				break;
+			cass 666:
+				alert("老铁走一波");
+				break;
+			cass 520:
+				alert("不是250就好");
+				break;
+			default:
+				alert("不能乱输入,小心爆炸");
+				break;
+
+
+		} -->
+		*/
+
+
+
+
+
+
+
+
+      //var a=20;
+      //var b=11;
+      //a<b ? alert("a小于b"):alert("不小于b")
+
+      //	var a=11;
+      //	var b=11;
+      //	if(a<b){
+      //		alert("a小于b");
+      //	}else if(a>b){
+      //		alert("a大于b");
+
+      //	}else {
+      //		alert("a等于b")
+      //	}
+
+
+
+
+
+
+
+      // 5. 小例子  如果考试成绩100分，我就给你做大肘子吃
+
+      /*
+				  if(a>=100){
+					  alert('吃大')
+				  }else{
+					alert('继续努力')
+				  }
+
+		*/
+
+
+
+
+
+
+
+      // 如果年龄大于等于 18 岁，允许进网吧,客户需求
+      // 1. 弹出一个用户输入框 输入年龄 这个年龄保存起来
+
+      //var age =Number(prompt('请问你的年龄'));
+      //if(age>=18){
+      //	alert('可以进入')
+      //}else if(age<18){
+      //	alert('不能进入')
+      //}
+
+
+
+
+
+
+
+      // 5. 小案例 接收用户输入的姓名，来判断是否中奖， 如果查询不到，则返回没中奖
+      //  接受用户输入的数据
+
+      /*
+		var name= prompt('请问你叫什么')
+		var a='刘德华'
+		if(name==a){
+			alert('中奖了')
+		}else if(name!=a){
+			alert('没中奖')
+		}
+        */
+
+
+
+
+
+
+      //	for (var i = 1; i <= 5; i++) {
+      //       console.log('媳妇我错了');
+      //	}
+      //
+
+      //	for(var i= 1; i<=5; i++){
+      //		console.log('媳妇我错了')
+      //	}
+      //	for(var i=1; i<=5;i++){
+      //		console.log('媳妇我错了')
+      //	}
+
+      //	for(var i=1;i<=5;i++){
+      //		console.log('媳妇我错了')
+      //	}
+      //	for(var i=1; i<=5;i++){
+      //		console.log('媳妇我错了')
+      //	}
+
+
+      
+
+
+
+
+      // 求输出一个人1到100岁案例
+      // 这个岁数和 我们的计数器能对上
+      //    for(var i = 1; i <= 100; i++){
+      //		if(i==1){
+      //			alert('我出生了')
+      //		}else if(i==100){
+      //			alert('我100岁了')
+      //
+      //		}else {
+      //			alert('我'+i+'岁')
+      //			console.log(i)
+      //		}
+      //
+      //	}
+
+
+
+
+
+
+
+      // for循环 因为有了计数器的存在 我们可以重复执行某些操作 比如做一些算术运算
+      // 求 1 到 100 的累加和
+      // 1.  1 + 2 + 3 + 4.... + 100
+      // 2.  这个相加的数值 正好等于 我们的计数器
+      // 3.  我们还需要一个变量sum   用来存储相加之后的结果
+      //	var num=0;
+      //	for(var i=1; i<=100; i++){
+      //		num=num+i;
+      //	}
+      //	console.log(num)
+
+      //	var num =1;
+      //	for(var i=1; i<=5;i++){
+      //		num=num * i;
+      //	}
+      //	console.log(num)
+
+
+
+
+
+
+
+      // 1.同时求1-100之间所有偶数和奇数的和
+
+      //	var a = 0;
+      //	var b = 0;
+      //	for(var i=1;i<=100; i++){
+      //		if(i%2==0){
+      //			a=a+=i;
+      //		}else if(i%2!==0){
+      //			b=b+=i;
+      //		}
+      //	}
+      //	console.log(a)
+      //	console.log(b)
+
+
+
+
+
+
+
+      // 2.首先要求用户输入班级人数，之后依次输入学生的成绩，最后打印出该班级总的成绩以及 平均成绩。
+      // 执行的思路过程
+      // (1) 弹出输入框输入总的班级人数 (num )
+      // (2) 依次输入学生的成绩（保存起来 score）  此时我们需要用到for 循环  弹出的次数跟班级总人数有关系 条件表达式
+      // (3) 进行业务处理 计算成绩 总成绩（sum） 平均成绩（average）
+      // (4) 弹出结果就可以咯
+      // 转换为代码
+
+      /*	var box = Number(prompt('请输入班级人数')) ; //弹出班级人数
+		var num=0;//保存班级成绩
+        var a = 0;//保存班级成绩
+		var score= [];//保存班级多人成绩的空数组
+		 
+		for(var i=0;i<box;i++){ //循环班级人数和成绩
+			var data = Number(prompt('请输入班级成绩'));//弹出班级成绩
+
+			num=num+data //算出班级总成绩
+			
+			score.push(data)//丢进班级成绩以保存
+		}
+		a=num/box;//算出平均班级成绩
+		console.log(score)
+		console.log(num)
+		console.log(a)
+	*/
+
+
+
+
+
+
+
+      /*
+        var age = prompt('请您输入年龄:');
+        // 2. 用这个年龄来进行判断  如果满足18岁  就弹出一个警示框 
+        if (age >= 18) {
+            alert('我想带你去网吧偷耳机');
+		}
+	*/
+
+
+
+
+
+
+      // 2. 让用户输入1个数，我们可以打印改个数的星星
+
+      /*var box = Number(prompt('请输入个数'));
+		var a = '';
+		for(var i = 0; i<box; i++){
+			a += '⊙';
+			console.log(a)
+		}*/
+
+
+
+
+
+      // 外层循环执行一次，则内层循环要执行全部次数（跑完毕）
+      //for(var i = 0; i<3; i++){
+      //	console.log('外层第'+i+'次')
+      //	for(var j = 0; j<3; j++){
+      //
+      //		console.log('内层第'+j+'次')
+      //	}
+      //}
+
+
+
+
+
+
+      //1. 打印三行三列的星星
+      //var a =Number(prompt('几行星星'))
+      //var b =Number(prompt('几列星星'))
+      //var num='';
+      //for (var i= 0; i<a; i++){
+      //	for(var j=0;j<b;j++){
+      //		num+='☆'
+      //	}
+      //	num+='\n'
+      //
+      //}
+      //console.log(num)
+
+
+
+
+
+
+      // 要求，翻转数组，将数组   ['red', 'green', 'blue', 'pink', 'purple'] 的内容 反过来存放。
+      // 1. 我们翻转数组 不涉及到 筛选  所以旧数组和新数组索引号都是连续的
+      // 2. 旧数组是输出方    新数组 是接受方
+      // 3. 新数组中的索引号 恰巧是  循环中的  i
+      // 4. 旧数组中取元素的索引号   通过 数组长度 - i - 1 得出来的
+      /* var a = [1,2,3,4,5]
+		var num = [] //空数组
+		for(var i=0; i<a.length; i++){//数组长度循环
+		  num[i]=a[a.length-i-1]//空数组[0]=数组长度5-空数组-1
+		}
+		console.log(num) */
+
+
+
+
+
+
+      // 冒泡排序 是一种算法,把一系列的数据按照一定的顺序进行排列显示(从小到大,从大到小）
+      // 我们冒泡排序 需要用到 双重for循环
+      // 外层循环控制的是趟数（以前的行）   一共走多少趟呢    数组的长度 - 1
+      // 里层循环控制每一趟的 交换次数(以前的列数 不固定)    每一趟交换的次数不同:  数组的长度 - i - 1
+      // var arr = [5, 4, 3, 2, 1];
+
+      //0号,1号,2号,3号, 4号
+      //	var arr = [1, 24, 53, 12, 71]
+      //
+      //	var a = '';
+      //	for (var i = 0; i < arr.length - 1; i++) {
+      //		for (var j = 0; j < arr.length - i - 1; j++) {
+      //			if(arr[j]>arr[j+1]){ //如果数组0号排位大于数组1号排位
+      //				a = arr[j]     //空=数组的0号排位
+      //				arr[j]=arr[j+1]; //数组0号排位等于数组1号排位
+      //				arr[j+1]=a;    //数组1号排位等于空
+      //				console.log(arr)
+      //			}
+      //
+      //
+      //		}
+
+      //	}
+
+
+
+
+
+
+      //	var arr = [55,22,44,66,33]
+      //	var a = ''
+      //	for(var i = 0; i<arr.length; i++){
+      //		for(var j = 0; j<arr.length; j++){
+      //			  if(arr[j]>arr[j+1]){ //如果数组0号排位大于数组1号排位
+      //				  a=arr[j] //空等于0号排位
+      //				  arr[j]=arr[j+1];//数组0号排位等于数组1号排位
+      //				  arr[j+1]=a;  //数组1号排位等于空
+      //					  console.log(arr)
+      //
+      //			  }
+      //		}
+      //	}
+
+
+
+
+
+
+      //var arr = [23,12,44,38,6];
+      //var box = '';
+      //for(var i = 0; i < arr.length; i++){
+      //	for(var j = 0; j < arr.length; j++){
+      //		if(arr[j]>arr[j+1]){
+      //			box=arr[j];
+      //			arr[j]=arr[j+1];
+      //			arr[j+1]=box;
+      //			console.log(arr)
+      //		}
+      //	}
+      //}
+
+
+
+
+
+
+
+      // 要求：求一个数组中 [2, 6, 1, 77, 52, 25, 7] 的最大值
+      // 程序思路
+      // 1. 首先需要一个存放最大值的变量
+      // 2. 把数组中的第一个值 取出来 放到 最大值变量里面去
+      // 3. 开始  用我们最大值的变量 和 从第2个数组元素开始比较
+      // 4. 如果最大值变量里面的值小于 数组元素   此时    把当前这个数组元素 赋值给 最大值变量
+
+      //	var arr = [2,6,1,77,52,25,71];
+      //	var box = '';
+      //	box=arr[1]; //空等于 (存储随便数组的一个值)
+      //	for(var i = 0; i<arr.length; i++){
+      //
+      //		if(box<arr[i]){ //空(arr数组中随便一个值)小于数组0号排位
+      //		   box=arr[i]   //空(arr数组中随便一个值)等于数组0号排位
+      //
+      //		}
+      //	}
+      //	  console.log(box)
+
+
+
+
+
+
+
+
+
+      //	var arr = [2,6,1,77,52,25,71];
+      //	var box = '';
+      //	box = arr[1]; //空数组等于数组(随便一个值)
+      //	for(var i = 0; i < arr.length; i++){
+      //		if(box < arr[i]){//空数组小于 数组(0号排位)
+      //			box = arr[i];//空数组等于 数组(0号排位)
+      //		}
+      //
+      //	}
+      //	console.log(box)
+
+
+
+
+
+
+      // var arr = [2,6,1,77,52,25,71];
+      // var box = '';
+      // box = arr[0]; //空 等于 数组(任何一个值)
+      // for(var i = 0; i<arr.length; i++){
+      //	 if(box<arr[i]){ //空 小于 数组(0号排位)
+      //		 box=arr[i]; //空 等于 数组(0号排位)
+      //	 }
+      // }
+
+
+
+
+
+
+      // 利用函数封装 计算1-100之间的整数和
+      // 因为函数都是执行某些操作，我们的函数名一般为 动词
+
+      //function fn(){
+      //	 var num = 0;
+      //	 for(var i = 0; i<=100 ;i++){
+      //		 num += i;
+      //	 }
+      //	 console.log(num)
+      //}
+      //
+      //fn()
+
+
+
+
+
+
+      // 利用函数封装 计算任意2个数的整数和
+
+      // function fn(arr,box){
+      //   var num = 0;
+      //   for(var i = arr; i<=box; i++){
+      //	   num += i;
+      //   }
+      //   console.log(num)
+      // }
+      //
+      // fn(1,100)
+
+
+
+
+
+      //	var num = 0; //变量num等于 0
+      //	function fn(arr,box){ // fn 函数(形参1,形参2)
+      //		for(var i = arr; i<box; i++){ // for循环i=形参1, arr<形参2
+      //			num += i;                 // 变量num +=arr
+      //		}
+      //		console.log(num);
+      //	}
+      //	fn(3,50)  //fn函数(实参1,实参2)
+
+
+
+
+
+
+      /*function fn(arr,box){
+	  return arr > box ? arr : box
+  }
+  console.log(fn(1,2))
+  console.log(fn(2,10))*/
+
+
+
+
+
+
+      // function box (arr) {
+      //	  var max = arr[0];
+      //	  for(var i=0;i<arr.length; i++){
+      //		  if(max<arr[i]){
+      //			 max=arr[i];
+      //		  }
+      //	  }
+      //	  return max;
+      // }
+      // console.log(box([22,1,33,23]))
+
+
+
+
+
+
+      // function fn(arr){
+      //	var max =arr[0];
+      //	for(var i = 1; i<arr.length;i++){
+      //		if(max<arr[i]){
+      //			max=arr[i];
+      //		}
+      //	}
+      //	return max;
+      //   }
+      //   console.log(fn([1,2,5,4,3]))
+
+
+
+
+
+
+      // function fn(arr){
+      //	  var box=arr[0];
+      //	  for(var i = 1; i<arr.length; i++){
+      //		  if(box<arr[i]){
+      //			  box=arr[i];
+      //		  }
+      //	  }
+      //	  return box;
+      // }
+      // console.log(fn([1,5,3,4,2]))
+
+
+
+
+
+
+      //function fn (arr){
+      //	var newBox = [];
+      //	for(var i =0; i<arr.length; i++){
+      //	  newBox[i]=arr[arr.length-i-1];
+      //
+      //		}
+      //		return newBox;
+      //	}
+      //
+      //
+      //onsole.log(fn([1,5,3,4,2]))
+
+
+
+
+
+
+
+      //function fn(arr){
+      //	var box= [];
+      //	for(var i =0;i<arr.length; i++){
+      //		box[i]=arr[arr.length-i-1];
+      //	}
+      //	return box;
+      //}
+      //console.log(fn([22,12,44,55,33]))
+
+
+
+
+
+
+      //   function fn(arr) {
+      //		for(var i = 0; i<arr.length-1; i++){
+      //			for(var j =0; j<arr.length-i-1; j++){
+      //				if(arr[j]>arr[j+1]){
+      //					var temp = arr[j];
+      //					arr[j]=arr[j+1];
+      //					arr[j+1]=temp;
+      //				}
+      //			}
+      //		}
+      //		return arr;
+      //	}
+      //	console.log(fn([4,7,3,5,2]))
+
+
+
+
+
+      //	function fn(arr) {
+      //		for(var i = 0; i<arr.length; i++){
+      //			for(var j = 0; j<arr.length; j++){
+      //				if(arr[j]>arr[j+1]){
+      //					var temp = arr [j];
+      //					arr[j]=arr[j+1];
+      //					arr[j+1]=temp;
+      //				}
+      //			}
+      //		}
+      //		return arr;
+      //	}
+      //	console.log(fn([5,3,2,7,6]))
+
+
+
+
+
+
+      //  function  box (arr)  {
+      //		  for(var i = 0; i<arr.length; i++){
+      //			  for(var j = 0; j< arr.length; j++){
+      //				  if(arr[j]<arr[j+1]){
+      //					var temp =arr[j];
+      //					arr[j]=arr[j+1]
+      //					arr[j+1]=temp;
+      //				  }
+      //			  }
+      //		  }
+      //		  return arr;
+      //	 }
+      //	 console.log(box([88,55,66,33,44]))
+
+
+
+
+
+
+      // var arr = [1,2,3,4,5]
+      // console.log(arr.reverse());
+
+      //	let p1 = new  Promise(function(resolve,reject){
+      //		$.ajax({
+      //			url: 'data/arr.txt',
+      //			dataType: "json",
+      //			success(arr){
+      //				resolve(arr);
+      //			},
+      //			error(err){
+      //				reject(err);
+      //			}
+      //		})
+      //	});
+      //	//发送2个 ajax请求 第三次ajax 请求需要第一次跟第二次请求里面的相关数据  如何进行处理
+      
+      //	let p2 = new  Promise(function(resolve,reject){
+      //		$.ajax({
+      //			url: 'data/json.txt',
+      //			dataType: "json",
+      //			success(arr){
+      //				resolve(arr);
+      //			},
+      //			error(err){
+      //				reject(err);
+      //			}
+      //		})
+      //	});
+      //
+      //	Promise.all([
+      //		p1,p2
+      //	]).then(function(arr){
+      //		console.log(arr);
+      //
+      //		let [res1,res2] = arr;
+      //		alert('全都成功了');
+      //		console.log(res1);
+      //		console.log(res2);
+      //
+      //		// alert(res1);
+      //		// alert(res2);
+      //	},function(){
+      //		alert('至少有一个失败了')
+      //	});
+
+
+
+
+
+
+      //let [{a,b},[n1,n2,n3],num,str]=[{a:12,b:5},[12,5,8],8,'cxzcv'];
+
+      //console.log(a,b,n1,n2,n3,num,str);
+
+      //	let arr=[1,2,3];
+      //
+      //	show(...arr);
+      //
+      //	function show(a,b,c,...arr){
+      //		alert(a);
+      //		alert(b);
+      //		alert(c);
+      //		alert(arr);
+      //	}
+      //
+      //	let arr1=[1,2,3];
+      //	let arr2=[4,5,6];
+      //	let arr3=[...arr1,...arr2]; //合并数组
+      //	let arr4=[...arr1]; //浅拷贝
+
+      
+
+
+
+      //	let a = 10;
+      //	var b = 1;
+      //
+      //	console.log(a,b)
+
+      //	let a = [];
+      //	for(let  i = 0; i < 10; i++){
+      //          a[i]= ()=>{
+      //			console.log(i);
+      //
+      //		  }
+      //	}
+      //	a[9]();
+
+
+
+
+
+
+    </script>
+  </head>
+
+  <body></body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue-2.4.0.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{msg | msgFormat('混蛋+1','314') | test }}</p>
+
+    </div>
+
+    <script>
+        //filter 代表过滤器
+        Vue.filter('msgFormat', function (msg, art, art2) { //定义Vue 全局过滤器, 名字叫做 msgFirmat
+            return msg.replace(/单纯/g, art + art2) // 返回  msg里替换(正则: /单纯/全局, 替换成msg里字符串)
+        })
+
+        Vue.filter('test', function (msg) {
+            return msg + '=================='
+        })
+
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '曾经，我也是一个单纯的少年，单纯的我，傻傻的问，谁是世界上最单纯的男人'
+            },
+            methods: {}
+
+
+        });
+    </script>
+</body>
+
+</html>

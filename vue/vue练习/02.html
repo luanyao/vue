@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue-2.4.0.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <p v-html="msg"></p>
+        <p v-text="msg"></p>
+        <p v-show="flag"></p>
+        显示我
+    </div>
+
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '我是一个msg',
+                flag: true
+            }
+        })
+
+        let vm2 = new Vue({
+            el:'#app',
+            data:{
+                msg:'我是一个msg2',
+                flag:true
+            }
+        })
+
+        console.log(vm.$data.msg)
+        setTimeout(function(){
+            vm.$data.msg="你好"
+        },2000)
+
+        console.log(vm2.$data.msg)
+        
+    </script>
+</body>
+
+</html>

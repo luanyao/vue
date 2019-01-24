@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+    li {
+        list-style: none;
+    }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- es5 写法 -->
+        <ul>
+            <li v-for="(item,index) in list">
+                name:{{item}}    ----------- 索引:{{index}}
+            </li>
+        </ul>
+
+        <hr>
+   <!-- es6  写法 -->
+        <ul>
+                <li v-for="(item,index) of list">
+                    name:{{item}}    ----------- 索引:{{index}}
+                </li>
+            </ul>
+
+        <!-- 对象的遍历方法     -->
+        <ul>
+                <li v-for="(item,key,index) of obj">
+                   val: {{item}}    ----------- key:{{key}}  ----索引:{{index}}
+                </li>
+            </ul>
+
+
+            <ul>
+                <li v-for="count in num">
+                    {{count}}
+                </li>
+            </ul>
+    </div>
+
+    <script>
+      new Vue({
+          el:"#app",
+          data:{
+              list:['开放',"大胡子",'泡椒牛肉面,新农','詹姆斯','雄哥'],
+              obj:{
+                  id:1,
+                  name:'信爷',
+                  des:'世界最帅的男人',
+                  price:'300000000000',
+
+              },
+              str:'我好帅,就是黑了点',
+              num:10,
+          }
+      })
+    
+    </script>
+</body>
+</html>

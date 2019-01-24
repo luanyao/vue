@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue-2.4.0.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+
+        .red {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+
+        <input type="text" v-model="miss">
+        <button @click="addData">点击增加数据</button>
+        <ul>
+            <!-- 3.使用组件 -->
+            <zujian1 v-for="(item,i) in list"  v-bind:msg="item"></zujian1>
+
+        </ul>
+    </div>
+
+    <script>
+        //1.注册组件
+        var zujian = {
+            props: ["msg"],
+            template: '<li>{{msg}}</li>'
+        }
+
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                miss: '',
+                list: ['第一条数据', '第二条数据', '第三条数据', '第四条数据'],
+                index: 0
+            },
+            methods: {
+                addData() {
+                    this.list.push(this.miss);
+                    this.miss = "";
+                },
+                change(i) {
+                    this.index = i;
+                }
+            },
+            //2.挂载组件
+            components: {
+                zujian1: zujian,
+            }
+
+        })
+    </script>
+</body>
+
+</html>

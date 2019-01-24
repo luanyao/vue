@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="600" height="400" id="cas"></canvas>
+</body>
+<script>
+    var cas =document.getElementById('cas');
+    // 绘图上下文
+    var ctx =cas.getContext('2d');
+    // var ctx = cas.getContext('webgl');
+   // ctx.moveTo(0,0); //把笔放在那里
+   // ctx.lineTo(600,400); //从刚才的位置,绘制到哪里
+   // ctx.setLineDash([10,10]);
+
+    
+   stepX = 10, stepY = stepX * 2 / 3;
+   startX = 0, startY= 0;
+   while (true) {
+       if(startX >= 600 || startY >= 400) break;
+       ctx.moveTo(startX,startY);
+       ctx.lineTo(startX+=stepX,startY+=stepY);
+       startX+=stepX;
+       startY+=stepY;
+   }
+    ctx.stroke(); //插边绘图,可以看到效果 把起始点和结束点连接起来
+
+</script>
+</html>

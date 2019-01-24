@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="600" height="400" id="cas"></canvas>
+    <script>
+        var cas = document.getElementById('cas');
+        // 绘图上下文
+        var ctx = cas.getContext('2d');
+
+        for (var i = 0; i < 256; i++) {
+            ctx.beginPath();
+
+            ctx.strokeStyle = 'rgb(' + i + ',' + (255 - i) + ',' + i + ')';
+
+            ctx.moveTo(50 + i, 100);
+            ctx.lineTo(50 + i, 300);
+            ctx.stroke();
+        }
+        
+    </script>
+</body>
+
+</html>

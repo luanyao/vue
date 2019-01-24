@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        name: <input type="text" v-model="msg1">
+        des: <input type="text" v-model="msg2">
+        price:<input type="text" v-model="msg3">
+        <button @click='addData'>点击我,把值放到数组里面去</button>
+        <ul>
+            <li v-for="(item,index) in list1">
+                {{item.id}}-------{{item.name}}------{{item.des}}-------{{item.price}}
+            </li>
+
+        </ul>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                msg1: '1',
+                msg2: '2',
+                msg3: '3',
+
+                list1: [{
+                    id: 1,
+                    name: '信爷',
+                    des: "世界最那个什么男人",
+                    price: "999999999",
+                }],
+            },
+            methods: {
+                addData() {
+                    var name = this.msg1;
+                    var des = this.msg2;
+                    var price = this.msg3;
+                    var id = Math.random() * 10;
+                    this.list1.push({
+                        id,
+                        name,
+                        des,
+                        price,
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

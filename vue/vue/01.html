@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app" class="aps">  
+
+        <div>{{msg}}</div>
+        <div v-text="msg"></div>
+        <div v-html="msg"></div>
+        <hr>
+
+        <div v-text="msg1"></div>
+        <div v-html="msg1"></div>
+        <hr>
+        <div v-show="flag"> 我要显示</div>
+        <button v-on:click="dianwo">点我快来呀</button>
+        
+    </div>
+
+    <div>{{aaa}}</div>
+    <script>
+        
+   var vm=  new Vue({
+            // el:'#app'  // id  class
+            el:'.aps',
+            data:{
+                msg:"入门vue  小白 很开心",
+                msg1:"<h1>入门vue  小白 很开心</h1>",
+                flag:true
+            },
+            methods:{
+                dianwo(){
+                    
+                    this.flag=!this.flag
+                }
+            }
+        })
+        </script>
+</body>
+</html>

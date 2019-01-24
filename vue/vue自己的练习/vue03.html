@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- es5写法 -->
+        <ul>
+            <li v-for="(item,index) in list">
+                name:{{item}} ---------------索引:{{index}}
+            </li>
+        </ul>
+        <hr>
+        <!-- es6写法 -->
+
+        <ul>
+            <li v-for="(item,index) of list">
+              val:{{item}} ------------------索引:{{index}}
+            </li>
+        </ul>
+        <!-- 对象遍历方法 -->
+        <ul>
+                <li v-for="(item,index,key) of obj">
+                  val:{{item}} --------------key:{{key}}------------------索引:{{index}}
+                </li>
+            </ul>
+            
+            <ul>
+                <li v-for="count in num">
+                   {{count}}
+                </li>
+            </ul>
+    </div>
+    <script>
+      let vm =   new Vue({
+            el: ".app",
+            data: {
+                list: ['乔丹', '科比', '詹姆斯', '麦迪', '雷阿伦'],
+                obj: {
+                    id: 1,
+                    name: '信爷',
+                    des: "世界最那个什么男人",
+                    price: "999999999",
+                },
+                str:'就是黑,别无他法',
+                num:10,
+            }
+        })
+    </script>
+
+</body>
+
+</html>

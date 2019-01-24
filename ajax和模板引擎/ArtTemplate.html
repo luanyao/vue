@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-1.12.2.js"></script>
+    <script src="./template-web.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+
+    </ul>
+    <script type="text/template" id="box">
+        <% for(var i=0;i< res.length; i++){ %>
+            <li><%= res[i].name%></li>
+            <li><%= res[i].age%></li>
+            <li><%= res[i].marry%></li>
+       <% } %>
+    
+    </script>
+
+
+
+
+    <script>
+        $(function () {
+            $.ajax({
+                url: "./data.json",
+                type: "get",
+                data: "",
+                dataType: "json",
+                success: function (data) {
+                    var html = template("box", {
+                        res: data.res,
+                    });
+                    $("ul").html(html);
+                }
+            }); 
+        });
+    </script>
+
+</body>
+
+</html>

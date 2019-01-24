@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue-2.4.0.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <mycom3></mycom3>
+    </div>
+
+
+    <div id="app2">
+        <mycom3></mycom3>
+        <login></login>
+    </div>
+
+    <template id="tmpl">
+        <div>
+            <h2>这是通过 template 元素,在外部定义的组件结构,这个方式,有代码的只能提示和高亮</h2>
+            <h4>娃哈哈</h4>
+        </div>
+    </template>
+
+    <template id="tmpl2">
+        <h2>这是私有的 login 组件</h2>
+    </template>
+
+    <script>
+        Vue.component('mycom3', {
+            template: '#tmpl'
+        })
+
+
+        var vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {}
+        });
+
+
+        var vm2 = new Vue({
+            el: '#app2',
+            data: {},
+            methods: {},
+            filters: {},
+            directives: {},
+            components: {
+                login: {
+                    template: '#tmpl2'
+                }
+            },
+
+            beforeCreate() {},
+            created() {},
+            beforeMount() {},
+            mounted() {},
+            beforeUpdate() {},
+            updated() {},
+            beforeDestroy() {},
+            destroyed() {}
+        })
+    </script>
+</body>
+
+</html>
