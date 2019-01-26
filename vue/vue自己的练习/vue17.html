@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h3>点击往数组里增加数据</h3>
+
+        <ul>
+            <li v-for="(item,index) in list">
+                {{item}}
+            </li>
+        </ul>
+        <button @click="addlist">点击增加数据</button>
+        <hr>
+        <h3>点击往对象里增加数据</h3>
+
+        <ul>
+            <li v-for="(val, key, index) of obj">
+                   值:{{val}}------key:{{key}}------索引:{{index}}
+            </li>
+        </ul>
+
+        <button @click="addObj">点击增加数据</button>
+    </div>
+    <script>
+        let vm = new Vue({
+            el:'#app',
+            data:{
+                list:[1,2,3],
+                obj:{
+                    name:'zhangsan',
+                    age:18,
+                    id:1
+                }
+            },
+            methods: {
+                addlist(){
+                    // this.list[3]=4;
+                    // this.list=[1,2,3,4];
+                    Vue.set(this.list,0,100)
+                },
+                addObj(){
+                    // this.obj.id=1;
+                    // for(var key in this.obj){
+                    //     console.log(key)
+                    // }
+                    
+                    // this.obj={
+                    //     name:'zhangsan',
+                    //     id:1,
+                    // }
+                    Vue.set(this.obj,'sex','nv')===vm.$set(this.obj,'sex','男')
+                }
+            },
+        })
+    </script>
+</body>
+</html>

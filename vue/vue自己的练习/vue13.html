@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <item></item>
+        <item2></item2>
+
+
+
+        <div>
+            <item></item>
+        </div>
+        <item2></item2>
+
+    </div>
+
+
+
+
+    <script>
+        Vue.component('item', {
+            template: "<div>我是全局组件</div>"
+        })
+
+
+        var item2 = {
+            template: "<div>我是另外一种组件形式</div>"
+        }
+
+
+        let vm = new Vue({
+            el: '#app',
+
+            data: {
+
+            },
+            components: {
+                item2
+            }
+        })
+    </script>
+</body>
+
+</html>

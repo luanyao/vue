@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h3 ref="haha">你好</h3>
+        <one ref="one"></one>
+        <two ref="two"></two>
+
+        <div>{{total}}</div>
+        <button @click="">点击获取值</button>
+    </div>
+
+    <script>
+        Vue.component('one', {
+            data() {
+                return {
+                    num: 1
+                }
+            },
+            template: "<div>{{num}}</div>"
+        })
+
+        Vue.component('two', {
+            data() {
+                return {
+                    num: 2
+                }
+            },
+            template: "<div>{{num}}</div>"
+        })
+
+
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                total: 3
+            },
+            methods: {
+                change() {
+                    // console.log(this.$refs.haha)
+                    // console.log(this.$refs.one)
+                    // console.log(this.$refs.two)
+
+                    this.total = this.$refs.one.num + this.$refs.two.num
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

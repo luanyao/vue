@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <h2>不加 is 的
+            效果
+        </h2>
+        <table>
+            <tbody>
+                <row></row>
+                <row></row>
+                <row></row>
+            </tbody>
+        </table>
+        <hr>
+
+        <h2>加 is 的
+            效果
+        </h2>
+        <table>
+            <tbody>
+                <tr is="row"></tr>
+                <tr is="row"></tr>
+                <tr is="row"></tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <script>
+        Vue.component("row", {
+
+            data(){
+                return{
+                 msg:'xxxxx'
+                }
+            },
+            template: "<tr><td>我是表格数据----{{msg}}</td></tr>"
+        })
+
+
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                msg:'aaaaa'
+            }
+        })
+    </script>
+</body>
+
+</html>
